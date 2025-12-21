@@ -1,0 +1,199 @@
+---
+
+---
+
+<div class="features-grid">
+    <div class="feature-card">
+        <div class="icon-box">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><polyline points="16 18 22 12 16 6"></polyline><polyline
+                    points="8 6 2 12 8 18"></polyline></svg
+            >
+        </div>
+
+        <div class="feature-info">
+            <span>Lenguajes</span>
+            <p>Typescript, Javascript</p>
+        </div>
+    </div>
+
+    <div class="feature-card">
+        <div class="icon-box">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path
+                    d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h9z"></path></svg
+            >
+        </div>
+        <div class="feature-info">
+            <span>Frameworks/Librerías</span>
+            <p>Express, React, Tailwind</p>
+        </div>
+    </div>
+
+    <div class="feature-card">
+        <div class="icon-box">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path
+                    d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path
+                    d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg
+            >
+        </div>
+        <div class="feature-info">
+            <span>Bases de datos</span>
+            <p>PostgreSQL, MongoDB</p>
+        </div>
+    </div>
+
+    <div class="feature-card">
+        <div class="icon-box">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><rect x="2" y="2" width="20" height="8" rx="2" ry="2"
+                ></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"
+                ></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line
+                    x1="6"
+                    y1="18"
+                    x2="6.01"
+                    y2="18"></line></svg
+            >
+        </div>
+        <div class="feature-info">
+            <span>Herramientas</span>
+            <p>Git, Github, Docker</p>
+        </div>
+    </div>
+
+    <div class="feature-card">
+        <div class="icon-box">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path
+                    d="M17.5 19a3.5 3.5 0 0 0 0-7h-1.5a7 7 0 0 0-14 0c0 1.93.78 3.68 2.05 4.95"
+                ></path><path d="M12 10V20"></path><path d="M9 17l3 3 3-3"
+                ></path></svg
+            >
+        </div>
+        <div class="feature-info">
+            <span>IDE</span>
+            <p>VS Code</p>
+        </div>
+    </div>
+
+    <div class="feature-card">
+        <div class="icon-box">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                ></path></svg
+            >
+        </div>
+        <div class="feature-info">
+            <span>S.O.</span>
+            <p>Linux</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .features-grid {
+        display: grid;
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        border-radius: 25px;
+        padding: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        max-width: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 4rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        mix-blend-mode: hard-light;
+    }
+
+    .feature-card {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 1.2rem;
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        transition: 0.3s ease;
+    }
+
+    .icon-box {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.7rem;
+        border-radius: 12px;
+        display: flex;
+        color: white;
+    }
+
+    .feature-info {
+        text-align: left;
+    }
+    .feature-info span {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.7);
+        display: block;
+    }
+    .feature-info p {
+        color: white;
+        font-weight: bold;
+        font-size: 1rem;
+        margin: 0;
+    }
+</style>

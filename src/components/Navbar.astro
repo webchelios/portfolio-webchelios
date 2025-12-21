@@ -1,0 +1,152 @@
+---
+
+---
+
+<nav class="nav-minimal">
+    <h1 class="nav-logo">Marcelo Anavia</h1>
+
+    <button id="menu-btn" class="hamburger" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div id="nav-menu" class="nav-links">
+        <a href="#about">Acerca de</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#skills">Habilidades</a>
+        <a href="#education">Educación</a>
+        <a href="#language" class="lang-selector">ES / EN</a>
+    </div>
+</nav>
+
+<script>
+    const btn = document.getElementById("menu-btn");
+    const menu = document.getElementById("nav-menu");
+
+    btn?.addEventListener("click", () => {
+        btn.classList.toggle("is-active");
+        menu?.classList.toggle("is-active");
+    });
+
+    // Cerrar menú al hacer click en un enlace (opcional)
+    const links = document.querySelectorAll(".nav-links a");
+    links.forEach((link) => {
+        link.addEventListener("click", () => {
+            btn?.classList.remove("is-active");
+            menu?.classList.remove("is-active");
+        });
+    });
+</script>
+
+<style>
+    .nav-minimal {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 1.5rem 2rem;
+        position: relative;
+    }
+
+    .nav-logo {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #333;
+        z-index: 100;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #666;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+    }
+
+    /* Estilos del Botón Hamburguesa */
+    .hamburger {
+        display: none; /* Oculto en desktop */
+        background: none;
+        border: none;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 5px;
+        z-index: 100;
+        padding: 10px;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 2px;
+        background-color: #333;
+        transition: 0.3s;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .hamburger {
+            display: flex;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: white;
+            padding: 2rem 0;
+            gap: 1.5rem;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+            z-index: 90;
+
+            /* Estado oculto */
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        /* Clase activa (activada por JS) */
+        .nav-links.is-active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Animación de la hamburguesa a X */
+        .hamburger.is-active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .hamburger.is-active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.is-active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+    }
+
+    .lang-selector {
+        font-weight: 600;
+        border-left: 1px solid #ddd;
+    }
+
+    @media (max-width: 768px) {
+        .lang-selector {
+            border-left: none;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+            width: 80%;
+            text-align: center;
+        }
+    }
+</style>

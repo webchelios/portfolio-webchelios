@@ -1,0 +1,182 @@
+---
+import FeaturesGrid from "../components/FeaturesGrid.astro";
+---
+
+<section class="hero-container">
+    <div class="hero-content">
+        <div class="base-background"></div>
+        <div class="animated-overlay"></div>
+        <h2 class="main-title">
+            Clean Code como estándar, soluciones robustas como resultado.
+        </h2>
+
+        <div class="call-to-action">
+            <a href="#" class="btn-cv">Descargar Currículum</a>
+        </div>
+
+        <div class="hero-img">
+            <div class="sensor s-top-left"></div>
+            <div class="sensor s-top-right"></div>
+            <div class="sensor s-bottom-left"></div>
+            <div class="sensor s-bottom-right"></div>
+
+            <img src="./images/screenshot3.png" alt="Project Preview" />
+        </div>
+
+        <FeaturesGrid />
+    </div>
+</section>
+<style>
+    .hero-container {
+        position: relative;
+
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 10;
+        max-width: 1100px;
+        width: 100%;
+        text-align: center;
+        isolation: auto;
+    }
+
+    .base-background,
+    .animated-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100vw;
+        height: 100%;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    .base-background {
+        background: radial-gradient(
+            circle,
+            rgba(158, 228, 255, 1) 0%,
+            rgba(112, 110, 255, 1) 23%,
+            rgba(190, 162, 243, 1) 44%,
+            rgba(255, 161, 244, 1) 68%,
+            rgba(255, 186, 207, 1) 100%
+        );
+    }
+
+    .animated-overlay {
+        background: radial-gradient(
+            circle,
+            rgba(255, 168, 174, 1) 0%,
+            rgba(255, 150, 224, 1) 27%,
+            rgba(195, 130, 255, 1) 52%,
+            rgba(117, 182, 255, 1) 76%,
+            rgba(66, 249, 255, 1) 100%
+        );
+        opacity: 0;
+        animation: smoothShift 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes smoothShift {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 0.7;
+        }
+    }
+
+    .main-title {
+        font-size: clamp(1.8rem, 5vw, 3rem);
+        font-weight: 400;
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+        color: rgb(106, 35, 94);
+        mix-blend-mode: color-burn;
+        line-height: 1.2;
+        padding: 0 1rem;
+    }
+
+    .btn-cv {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background-color: rgba(157, 77, 255, 0.4);
+        mix-blend-mode: color-dodge;
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        margin-bottom: 3.5rem;
+        border: 2px solid rgb(165, 40, 46);
+    }
+
+    .btn-cv:hover {
+        border: 2px solid rgb(179, 148, 150);
+    }
+
+    .btn-cv:active {
+        color: rgb(0, 0, 0);
+        border: 2px solid rgb(165, 40, 46);
+    }
+
+    .hero-img {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto 4rem auto;
+        perspective: 1000px;
+    }
+
+    .sensor {
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        z-index: 20;
+    }
+
+    .s-top-left {
+        top: 0;
+        left: 0;
+    }
+    .s-top-right {
+        top: 0;
+        right: 0;
+    }
+    .s-bottom-left {
+        bottom: 0;
+        left: 0;
+    }
+    .s-bottom-right {
+        bottom: 0;
+        right: 0;
+    }
+
+    .s-top-left:hover ~ img {
+        transform: rotateX(4deg) rotateY(-4deg) scale(1.02);
+    }
+    .s-top-right:hover ~ img {
+        transform: rotateX(4deg) rotateY(4deg) scale(1.02);
+    }
+    .s-bottom-left:hover ~ img {
+        transform: rotateX(-4deg) rotateY(-4deg) scale(1.02);
+    }
+    .s-bottom-right:hover ~ img {
+        transform: rotateX(-4deg) rotateY(4deg) scale(1.02);
+    }
+
+    .hero-img {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .hero-img img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+        transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+</style>
